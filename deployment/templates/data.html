@@ -30,11 +30,29 @@
   padding: 8px;
 }
 
+.chip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+}
+
+.chip img {
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
 .success {background-color: #04AA6D;} 
 .danger {background-color: #f44336;} /* Red */
 
 </style>
-<body>
+<body style="background-color: #8e8e8e;">
 
 
     <div class="coupon">
@@ -45,18 +63,24 @@
         <div class="container" style="background-color:white">
                 {% if form_data['result'] == 1.0 %}
                 <div class="container">
-                    <p>Classification: <span class="label danger">{{form_data['result']}}</span></p>
+                    <p>Classification: <span class="label danger">Toxic Comment</span></p>
                     <p> Your input: <span class="danger">{{form_data['InputVal']}}</span></p>
+                    <div class="chip">
+                        <img src="https://www.cambridge.org/elt/blog/wp-content/uploads/2019/07/Sad-Face-Emoji-480x480.png" alt="Sadge" width="96" height="96">
+                        Please dont comment this, it is not positive!
+                      </div>
                 </div>
                 {%else%}
                 <div class="container">
-                    <p>Classification: <span class="label success">{{form_data['result']}}</span></p>
+                    <p>Classification: <span class="label success">Clean Comment</span></p>
                     <p> Your input: <span class="success">{{form_data['InputVal']}}</span></p>
+                    <div class="chip">
+                        <img src="https://cdn.shopify.com/s/files/1/1061/1924/products/Happy_Emoji_Icon_5c9b7b25-b215-4457-922d-fef519a08b06_large.png?v=1571606090" alt="Happy" width="96" height="96">
+                        You should continue the good comments!
+                      </div>
                 </div>
                 {% endif %}
         </div>
-
-
       </div>
 
     <!-- 
