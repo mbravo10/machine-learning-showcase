@@ -1,7 +1,11 @@
 from cmath import pi
+import json
 from flask import Flask, request, render_template
 import string
 import pickle
+import numpy as np
+
+app = Flask(__name__)
 
 def remove_stop_words(comment):
     eng_stops = pickle.load(open('./pickles/eng_stops.pkl', 'rb'))
@@ -28,7 +32,6 @@ def get_pred(comment):
     best_sgd = pickle.load(open('./pickles/trained_sgd.pkl', 'rb'))
     return best_sgd.predict(comment)
 
-app = Flask(__name__)
 
 @app.route('/')
 def my_form():
@@ -39,7 +42,7 @@ def data():
     if request.method == 'GET':
         return f"The URL /data is accessed directly. Try going to '/form' to submit form"
     if request.method == 'POST':
-        form_data = request.form
+        form_data = request.form.to_dict()
         print(form_data['InputVal'])
 
         data = remove_stop_words(form_data['InputVal'])
@@ -51,6 +54,5 @@ def data():
 
         # 1 is a toxic
         # 0 is non-toxic
-        print(prediction)
-
-        return render_template('data.html',form_data = form_data)
+        form_data['result'] = prediction;
+        return render_template('data.html', form_data= form_data)
