@@ -54,5 +54,5 @@ def data():
 
         # 1 is a toxic
         # 0 is non-toxic
-        form_data['result'] = prediction;
+        form_data['result'] = prediction[0];
         return render_template('data.html', form_data= form_data)
