@@ -33,7 +33,7 @@ def get_pred(comment):
     return best_sgd.predict(comment)
 
 
-@app.route('/home')
+@app.route('/')
 def my_form():
     return render_template('my-form.html')
  

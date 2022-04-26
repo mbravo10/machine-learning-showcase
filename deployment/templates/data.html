@@ -4,86 +4,122 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet">
 <style>
-    .coupon {
-  border: 5px dotted #bbb; /* Dotted border */
-  width: 80%;
-  border-radius: 15px; /* Rounded border */
-  margin: 0 auto; /* Center the coupon */
-  max-width: 600px;
-}
+  .coupon {
+    border: 5px dotted #bbb;
+    /* Dotted border */
+    width: 80%;
+    border-radius: 15px;
+    /* Rounded border */
+    margin: 0 auto;
+    /* Center the coupon */
+    max-width: 600px;
+  }
 
-.container {
-  padding: 2px 16px;
-  background-color: #f1f1f1;
-}
+  input {
+    width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #0087cc;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+  }
 
-.promo {
-  background: #ccc;
-  padding: 3px;
-}
+  .btn-block {
+    margin-top: 10px;
+    text-align: center;
+  }
 
-.expire {
-  color: red;
-}
-.label {
-  color: white;
-  padding: 8px;
-}
+  .container {
+    padding: 2px 16px;
+    background-color: #f1f1f1;
+  }
 
-.chip {
-  display: inline-block;
-  padding: 0 25px;
-  height: 50px;
-  font-size: 16px;
-  line-height: 50px;
-  border-radius: 25px;
-  background-color: #f1f1f1;
-}
+  .promo {
+    background: #ccc;
+    padding: 3px;
+  }
 
-.chip img {
-  float: left;
-  margin: 0 10px 0 -25px;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-}
+  .expire {
+    color: red;
+  }
 
-.success {background-color: #04AA6D;} 
-.danger {background-color: #f44336;} /* Red */
+  .label {
+    color: white;
+    padding: 8px;
+  }
 
+  .chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+  }
+
+  .chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  .success {
+    background-color: #04AA6D;
+  }
+
+  .danger {
+    background-color: #f44336;
+  }
+
+  /* Red */
 </style>
+
 <body style="background-color: #8e8e8e;">
 
 
-    <div class="coupon">
-        <div class="container">
-          <h3>Your comment is classified as</h3>
-        </div>
-        <img src="https://www.visitgrandjunction.com/sites/default/files/default_images/gjvcb-article-default.jpg" alt="Lights" style="width:100%">
-        <div class="container" style="background-color:white">
-                {% if form_data['result'] == 1.0 %}
-                <div class="container">
-                    <p>Classification: <span class="label danger">Toxic Comment</span></p>
-                    <p> Your input: <span class="danger">{{form_data['InputVal']}}</span></p>
-                    <div class="chip">
-                        <img src="https://www.cambridge.org/elt/blog/wp-content/uploads/2019/07/Sad-Face-Emoji-480x480.png" alt="Sadge" width="96" height="96">
-                        Please dont comment this, it is not positive!
-                      </div>
-                </div>
-                {%else%}
-                <div class="container">
-                    <p>Classification: <span class="label success">Clean Comment</span></p>
-                    <p> Your input: <span class="success">{{form_data['InputVal']}}</span></p>
-                    <div class="chip">
-                        <img src="https://cdn.shopify.com/s/files/1/1061/1924/products/Happy_Emoji_Icon_5c9b7b25-b215-4457-922d-fef519a08b06_large.png?v=1571606090" alt="Happy" width="96" height="96">
-                        You should continue the good comments!
-                      </div>
-                </div>
-                {% endif %}
+  <div class="coupon">
+    <div class="container">
+      <h3>Your comment is classified as</h3>
+    </div>
+    <img src="https://www.visitgrandjunction.com/sites/default/files/default_images/gjvcb-article-default.jpg"
+      alt="Lights" style="width:100%">
+    <div class="container" style="background-color:white">
+      {% if form_data['result'] == 1.0 %}
+      <div class="container">
+        <p>Classification: <span class="label danger">Toxic Comment</span></p>
+        <p> Your input: <span class="danger">{{form_data['InputVal']}}</span></p>
+        <div class="chip">
+          <img src="https://www.cambridge.org/elt/blog/wp-content/uploads/2019/07/Sad-Face-Emoji-480x480.png"
+            alt="Sadge" width="96" height="96">
+          Please dont comment this, it is not positive!
         </div>
       </div>
+      {%else%}
+      <div class="container">
+        <p>Classification: <span class="label success">Clean Comment</span></p>
+        <p> Your input: <span class="success">{{form_data['InputVal']}}</span></p>
+        <div class="chip">
+          <img
+            src="https://cdn.shopify.com/s/files/1/1061/1924/products/Happy_Emoji_Icon_5c9b7b25-b215-4457-922d-fef519a08b06_large.png?v=1571606090"
+            alt="Happy" width="96" height="96">
+          You should continue the good comments!
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    <div class='btn-block'>
+      <form action="/">
+        <input type=submit value='Submit another review'>
+      </form>
+    </div>
+  </div>
 
-    <!-- 
+  <!-- 
     <div class="w3-card-4 w3-margin" style="width:40%">
   <div class="w3-display-container w3-text-white">
     <img src="https://www.visitgrandjunction.com/sites/default/files/default_images/gjvcb-article-default.jpg" alt="Lights" style="width:100%">
@@ -103,5 +139,5 @@
 -->
 
 </body>
-</html> 
 
+</html>
