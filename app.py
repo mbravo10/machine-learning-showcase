@@ -57,3 +57,5 @@ def data():
         form_data['result'] = prediction[0];
         return render_template('data.html', form_data= form_data)
 
+if __name__ == '__main__':
+    app.run(debug=True)
