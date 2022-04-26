@@ -29,7 +29,7 @@ def vectorize(comment):
     return hasher.transform(comment)
 
 def get_pred(comment):
-    best_sgd = pickle.load(open('./pickles/trained_sgd.pkl', 'rb'))
+    best_sgd = pickle.load(open('./pickles/trained_log_reg.pkl', 'rb'))
     return best_sgd.predict(comment)
 
 
