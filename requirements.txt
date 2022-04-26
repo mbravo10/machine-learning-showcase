@@ -74,8 +74,8 @@ pyOpenSSL
 pyparsing 
 PyPrind==2.11.3
 PyQt5
-PyQt5_sip==4.19.25
-PyQtChart==5.15.2
+PyQt5_sip
+PyQtChart
 pyrsistent 
 PySocks 
 python-dateutil 
