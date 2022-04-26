@@ -1,4 +1,4 @@
-Python==3.9.12
+Python
 anyio  
 appnope  
 argon2-cffi  
