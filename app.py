@@ -6,7 +6,7 @@ import pickle
 import numpy as np
 
 app = Flask(__name__)
-'''
+
 def remove_stop_words(comment):
     eng_stops = pickle.load(open('./pickles/eng_stops.pkl', 'rb'))
     new_comment = []
@@ -56,7 +56,4 @@ def data():
         # 0 is non-toxic
         form_data['result'] = prediction[0];
         return render_template('data.html', form_data= form_data)
-'''
-@app.route('/')
-def my_form():
-    return '<h1> Hello </h1>'
+
