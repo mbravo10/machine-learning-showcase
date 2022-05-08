@@ -1,5 +1,15 @@
 # Toxic Comment Classification
 
+## Contributors and Credits
+William Jessop
+- Setup Google Colab Experiments
+- Wrote notebooks to pickle the best models
+
+Mario Bravo
+- Did website development and deployment
+
+The majority of the experiments in the notebooks were peer programmed.
+
 ## Quick Links
 | Name                | Value                                           |
 | :------------------ | :---------------------------------------------  |
