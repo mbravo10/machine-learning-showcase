@@ -22,6 +22,8 @@ The **"notebooks"** folder contains all of the data cleaning, and model testing,
 
 The **"pickles"** folder contains the pickled versions of the Python objects that were used in the website deployment of the project.
 
+The **"templates"** folder contains some static assets and html for the hosted Flask website.
+
 The **root** folder of the repository contains the code for the Python website that was deployed as well as a few other files for Python deployment. This folder also contains the slides for the presentation that was given in a pdf format.
 
 ## Hyper Parameter Tuning Experiments
